@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="js/paper-full.js"></script>
+
+<!-- Load the howler.js library -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.js"></script>
+
+<!-- link to css -->
+<link rel="stylesheet" href="css/sound.css">
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+
+
+
+    //howler sounds
+
+    var sound1 = new Howl({
+        src: ['sounds/sounds/bubbles.mp3']
+      });
+
+      var sound2 = new Howl({
+        src: ['sounds/sounds/clay.mp3']
+      });
+
+      var sound3 = new Howl({
+        src: ['sounds/sounds/confetti.mp3']
+      });
+
+      var sound4 = new Howl({
+        src: ['sounds/sounds/corona.mp3']
+      });
+
+      var sound5 = new Howl({
+        src: ['sounds/sounds/dotted-spiral.mp3']
+      });
+
+      var sound6 = new Howl({
+        src: ['sounds/sounds/flash-1.mp3']
+      });
+
+      var sound7 = new Howl({
+        src: ['sounds/sounds/flash-2.mp3']
+      });
+
+      var sound8 = new Howl({
+        src: ['sounds/sounds/flash-3.mp3']
+      });
+
+      var sound9 = new Howl({
+        src: ['sounds/sounds/glimmer.mp3']
+      });
+
+      var sound10 = new Howl({
+        src: ['sounds/sounds/moon.mp3']
+      });
+
+      var sound11 = new Howl({
+        src: ['sounds/sounds/pinwheel.mp3']
+      });
+
+      var sound12 = new Howl({
+        src: ['sounds/sounds/piston-1.mp3']
+      });
+
+      var sound13 = new Howl({
+        src: ['sounds/sounds/piston-2.mp3']
+      });
+
+      var sound14 = new Howl({
+        src: ['sounds/sounds/piston-3.mp3']
+      });
+      
+      var sound15 = new Howl({
+        src: ['sounds/sounds/prism-1.mp3']
+      });
+
+      var sound16 = new Howl({
+        src: ['sounds/sounds/prism-2.mp3']
+      });
+
+      var sound17 = new Howl({
+        src: ['sounds/sounds/prism-2.mp3']
+      });
+
+      var sound18 = new Howl({
+        src: ['sounds/sounds/prism-3.mp3']
+      });
+
+      var sound19 = new Howl({
+        src: ['sounds/sounds/splits.mp3']
+      });
+
+      var sound20 = new Howl({
+        src: ['sounds/sounds/squiggle.mp3']
+      });
+
+      var sound21 = new Howl({
+        src: ['sounds/sounds/strike.mp3']
+      });
+
+      var sound22 = new Howl({
+        src: ['sounds/sounds/suspension.mp3']
+      });
+      var sound23 = new Howl({
+        src: ['sounds/sounds/timer.mp3']
+      });
+      var sound24 = new Howl({
+        src: ['sounds/sounds/ufo.mp3']
+      });
+      var sound25 = new Howl({
+        src: ['sounds/sounds/veil.mp3']
+      });
+      var sound26 = new Howl({
+        src: ['sounds/sounds/wipe.mp3']
+      });
+      var sound27 = new Howl({
+        src: ['sounds/sounds/zig-zag.mp3']
+      });
+      
+
+//end of howler sounds
+
+var circles = [];
+
+    function onKeyDown(event) {
+
+       
+        
+
+        var maxPoint = new Point(view.size.width, view.size.height);
+
+//Point.random is the builtin function for paperjs to generate x,y random numbers between 0 to 1 in decimal e.g (0.5,0.6).
+        var randomPoint= Point.random();
+        var point = maxPoint * randomPoint;
+        // so Point view.size.width or height is max canvas size like (1200,900) * (.5,.6) = (600,540) position to circle
+        console.log(point);
+
+        var newCircle = new Path.Circle(point, 300);
+
+//setting each key sound and color
+
+switch (event.key) {
+    case 'q':
+    sound1.play();
+    newCircle.fillColor = "#156e90";
+      break;
+    case 'w':
+    sound2.play();
+    newCircle.fillColor = "#6c3e90";
+    break;
+    case 'e':
+    sound3.play();
+    newCircle.fillColor = "#880C25";
+    break;
+    case 'r':
+    sound4.play();
+    newCircle.fillColor = "#8BC34A";
+    break;
+    case 't':
+    sound5.play();
+    newCircle.fillColor = "#ff5079";
+    break;
+    case 'y':
+    sound6.play();
+    newCircle.fillColor = "#f53cfd";
+    break;
+    case 'u':
+    sound7.play();
+    newCircle.fillColor = "#fef65b";
+    break;
+    case 'i':
+    sound8.play();
+    newCircle.fillColor = "#3399ff";
+    break;
+    case 'o':
+    sound9.play();
+    newCircle.fillColor = "#ff7f50";
+    break;
+    case 'p':
+    sound10.play();
+    newCircle.fillColor = "#00CED1";
+    break;
+    case 'p':
+    sound11.play();
+    newCircle.fillColor = "#C39797";
+    break;
+    case '[':
+    sound12.play();
+    newCircle.fillColor = "#CC0000";
+    break;
+    case ']':
+    sound13.play();
+    newCircle.fillColor = "#2525EC";
+    break;
+    case 'a':
+    sound14.play();
+    newCircle.fillColor = "#CE9FE8";
+    break;
+    case 's':
+    sound15.play();
+    newCircle.fillColor = "#FFC300";
+    break;
+    case 'd':
+    sound16.play();
+    newCircle.fillColor = "#00CED1";
+    break;
+    case 'f':
+    sound17.play();
+    newCircle.fillColor = "#CC2845";
+    break;
+    case 'g':
+    sound18.play();
+    newCircle.fillColor = "#C0D6E4";
+    break;
+    case 'h':
+    sound19.play();
+    newCircle.fillColor = "#ccff00";
+    break;
+    case 'j':
+    sound20.play();
+    newCircle.fillColor = "#FFDAB9";
+    break;
+    case 'k':
+    sound21.play();
+    newCircle.fillColor = "#C0C5FF";
+    break;
+    case 'l':
+    sound22.play();
+    newCircle.fillColor = "#3399FF";
+    break;
+    case ';':
+    sound23.play();
+    newCircle.fillColor = "#FF084A";
+    break;
+    case 'z':
+    sound24.play();
+    newCircle.fillColor = "#B4EEB4";
+    break;
+    case 'x':
+    sound25.play();
+    newCircle.fillColor = "#FF7F50";
+    break;
+    case 'c':
+    sound25.play();
+    newCircle.fillColor = "#DF0664";
+    break;
+    case 'v':
+    sound26.play();
+    newCircle.fillColor = "#F53CFD";
+    break;
+    case 'b':
+    sound27.play();
+    newCircle.fillColor = "#FEF65B";
+    break;
+    case 'n':
+    sound7.play();
+    newCircle.fillColor = "#8BC34A";
+    break;
+    case 'm':
+    sound17.play();
+    newCircle.fillColor = "#880C25";
+    break;
+    case ',':
+    sound10.play();
+    newCircle.fillColor = "#2525EC";
+    break;
+    case '.':
+    sound20.play();
+    newCircle.fillColor = "#00CED1";
+    break;
+    
+    default:
+        sound1.play();
+      newCircle.fillColor = "orange";
+  }
+        
+        // When a key is pressed, create a circle
+        circles.push(newCircle);
+    }
+
+
+
+function onFrame(event){
+
+    //onFrame function run code by each frame rate decided by paperjs itself so each frame we add 1 to hue to change the color 
+
+for(var i=0; i<circles.length; i++){
+
+    circles[i].fillColor.hue += 1;
+
+    circles[i].scale(.9);
+    }
+
+}
+
+
+</script>
+</head>
+<body>
+    
+    <h1>Press Any key &sung; Sound Circle Boom Fun</h1>
+    
+    
+    
+
+    <canvas id="myCanvas" resize></canvas>
+    
+</body>
+</html>
